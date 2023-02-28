@@ -30,6 +30,23 @@ class SaucedemoLogin(unittest.TestCase):
         self.assertEqual(header_title.casefold(), "PRODUCTS".casefold())
         first_product_name = productListingPage.getFirstProductName()
         self.assertEqual(first_product_name, "Sauce Labs Backpack")
+    
+    def test_b_success_logout(self):
+        # step to login
+        loginPage = LoginPage(self.browser)
+        loginPage.setUsername(self.username)
+        loginPage.setPassword(self.password)
+        loginPage.clickLogin()
+        time.sleep(5)
+        # step to logout
+        productListingPage = ProductListingPage(self.browser)
+        productListingPage.clickBurgerMenu()
+        time.sleep(3)
+        productListingPage.clickLogout()
+        time.sleep(5)
+        # assertion
+        login_text = loginPage.getLoginButton()
+        self.assertEquals(login_text.casefold(), "LOGIN".casefold())
 
     def tearDown(self):
         self.browser.close()
