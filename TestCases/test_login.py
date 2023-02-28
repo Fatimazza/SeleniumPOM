@@ -17,10 +17,10 @@ class SaucedemoLogin(unittest.TestCase):
         self.browser.get(self.baseUrl)
 
     def test_a_success_login_standard_user(self):
-        loginpage = LoginPage(self.browser)
-        loginpage.setUsername(self.username)
-        loginpage.setPassword(self.password)
-        loginpage.clickLogin()
+        loginPage = LoginPage(self.browser)
+        loginPage.setUsername(self.username)
+        loginPage.setPassword(self.password)
+        loginPage.clickLogin()
         # assertion
         productListingPage = ProductListingPage(self.browser)
         header_title = productListingPage.getHeaderTitle()
