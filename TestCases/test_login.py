@@ -25,6 +25,8 @@ class SaucedemoLogin(unittest.TestCase):
         productListingPage = ProductListingPage(self.browser)
         header_title = productListingPage.getHeaderTitle()
         self.assertEqual(header_title, "PRODUCTS")
+        first_product_name = productListingPage.getFirstProductName()
+        self.assertEqual(first_product_name, "Sauce Labs Backpack")
 
     def tearDown(self):
         self.browser.close()
