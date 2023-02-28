@@ -5,6 +5,9 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
 class SaucedemoLogin(unittest.TestCase):
+    baseUrl = "https://www.saucedemo.com/"
+    username = "standard_user"
+    password = "secret_sauce"
 
     def setUp(self):
         self.browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
