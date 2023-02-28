@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
 from PageObjects.loginPage import LoginPage
+from PageObjects.productListingPage import ProductListingPage
 
 class SaucedemoLogin(unittest.TestCase):
     baseUrl = "https://www.saucedemo.com/"
@@ -20,6 +21,10 @@ class SaucedemoLogin(unittest.TestCase):
         loginpage.setUsername(self.username)
         loginpage.setPassword(self.password)
         loginpage.clickLogin()
+        # assertion
+        productListingPage = ProductListingPage(self.browser)
+        header_title = productListingPage.getHeaderTitle()
+        self.assertEqual(header_title, "PRODUCTS")
 
     def tearDown(self):
         self.browser.close()
