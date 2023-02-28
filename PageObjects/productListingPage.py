@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 
 class ProductListingPage:
-    header_product_xpath = "//div[@id='header_container']//span[@class='title']"
-    first_product_name_class = "inventory_item_name"
+    text_header_xpath = "//div[@id='header_container']//span[@class='title']"
+    text_first_product_name_class = "inventory_item_name"
     button_burger_menu_id = "react-burger-menu-btn"
     link_logout_linktext = "Logout"
 
@@ -10,10 +10,10 @@ class ProductListingPage:
         self.driver = driver
 
     def getHeaderTitle(self):
-        return self.driver.find_element(By.XPATH,self.header_product_xpath).text
+        return self.driver.find_element(By.XPATH,self.text_header_xpath).text
 
     def getFirstProductName(self):
-        return self.driver.find_element(By.CLASS_NAME, self.first_product_name_class).text
+        return self.driver.find_element(By.CLASS_NAME, self.text_first_product_name_class).text
 
     def clickBurgerMenu(self):
         self.driver.find_element(By.ID, self.button_burger_menu_id).click()
