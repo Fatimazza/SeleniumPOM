@@ -1,3 +1,4 @@
+import time
 import unittest
 
 from selenium import webdriver
@@ -15,12 +16,14 @@ class SaucedemoLogin(unittest.TestCase):
     def setUp(self):
         self.browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         self.browser.get(self.baseUrl)
+        time.sleep(5)
 
     def test_a_success_login_standard_user(self):
         loginPage = LoginPage(self.browser)
         loginPage.setUsername(self.username)
         loginPage.setPassword(self.password)
         loginPage.clickLogin()
+        time.sleep(5)
         # assertion
         productListingPage = ProductListingPage(self.browser)
         header_title = productListingPage.getHeaderTitle()
