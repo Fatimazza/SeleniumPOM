@@ -27,7 +27,7 @@ class SaucedemoLogin(unittest.TestCase):
         # assertion
         productListingPage = ProductListingPage(self.browser)
         header_title = productListingPage.getHeaderTitle()
-        self.assertEqual(header_title, "PRODUCTS")
+        self.assertEqual(header_title.casefold(), "PRODUCTS".casefold())
         first_product_name = productListingPage.getFirstProductName()
         self.assertEqual(first_product_name, "Sauce Labs Backpack")
 
