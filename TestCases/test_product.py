@@ -38,9 +38,11 @@ class SaucedemoProduct(unittest.TestCase):
         product_detail_name = productDetailPage.getProductName()
         product_detail_desc = productDetailPage.getProductDesc()
         product_detail_price = productDetailPage.getProductPrice()
+        product_detail_image = productDetailPage.getProductImage()
         self.assertEqual(product_detail_name, "Sauce Labs Bolt T-Shirt")
         self.assertIn("Get your testing superhero on with the Sauce Labs bolt T-shirt", product_detail_desc)
         self.assertEqual(product_detail_price, "$15.99")
+        self.assertIn("data:image/png;base64", product_detail_image)
 
     def tearDown(self):
         self.browser.close()
