@@ -64,11 +64,21 @@ Change to Project directory on Terminal or Command Prompt
 cd SeleniumPOM
 ```
 
-Run Test Execution on Terminal
+Run Specific Test Execution on Terminal
+
+```Bash
+python -m unittest TestCases/test_login.py
+```
+
+Run All Test Execution on Terminal
 
 ```Bash
 python -m unittest
 ```
+
+> Note: By default the Tests run on Chrome Browser
+
+> To run on Firefox Browser, change the browser on TestCases/test_login.py and TestCases/test_product.py file
 
 ### Generate Test Execution HTML Report
 
