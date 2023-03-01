@@ -18,3 +18,26 @@ What will be used on this project
 | Design Pattern | Selenium POM or Page Object Model |
 | Test Reporter  | Pytest HTML (https://pytest-html.readthedocs.io/en/latest/) |
 | Browser        | Latest version of Chrome / Mozilla Firefox  |
+
+## Installation
+
+Install VS Code Editor, Python, and PIP
+
+To check whether you already installed Python & PIP
+
+```Bash
+python --version
+```
+```Bash
+python -m pip --version 
+```
+
+## Setting up Project
+
+### Clone
+
+**👉 [Clone this Repository](https://github.com/Fatimazza/SeleniumPOM/)** through Terminal or Command Prompt
+
+### Open the Project on Editor
+
+Open this Automation Project using VS Code Editor.
