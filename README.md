@@ -80,6 +80,11 @@ python -m unittest
 
 > To run on Firefox Browser, change the browser on TestCases/test_login.py and TestCases/test_product.py file
 
+```Python
+   # self.browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+   self.browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+```
+
 ### Generate Test Execution HTML Report
 
 Install Pytest-HTML Reporter
