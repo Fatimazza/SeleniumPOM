@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from PageObjects.loginPage import LoginPage
 from PageObjects.productListingPage import ProductListingPage
+from PageObjects.productDetailPage import ProductDetailPage
 
 class SaucedemoProduct(unittest.TestCase):
     baseUrl = "https://www.saucedemo.com/"
@@ -32,6 +33,14 @@ class SaucedemoProduct(unittest.TestCase):
         # step to open detail page
         productListingPage.getThirdProduct().click()
         time.sleep(5)
+        # assert product detail
+        productDetailPage = ProductDetailPage(self.browser)
+        product_detail_name = productDetailPage.getProductName()
+        product_detail_desc = productDetailPage.getProductDesc()
+        product_detail_price = productDetailPage.getProductPrice()
+        self.assertEqual(product_detail_name, "Sauce Labs Bolt T-Shirt")
+        self.assertIn("Get your testing superhero on with the Sauce Labs bolt T-shirt", product_detail_desc)
+        self.assertEqual(product_detail_price, "$15.99")
 
     def tearDown(self):
         self.browser.close()
