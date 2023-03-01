@@ -44,6 +44,18 @@ class SaucedemoProduct(unittest.TestCase):
         self.assertEqual(product_detail_price, "$15.99")
         self.assertIn("data:image/png;base64", product_detail_image)
 
+    def test_b_success_product_add_tocart(self):
+        # step to login
+        loginPage = LoginPage(self.browser)
+        loginPage.setUsername(self.username)
+        loginPage.setPassword(self.password)
+        loginPage.clickLogin()
+        time.sleep(5)
+        # assert product available
+        productListingPage = ProductListingPage(self.browser)
+        third_product_name = productListingPage.getThirdProduct().text
+        self.assertEqual("Sauce Labs Bolt T-Shirt", third_product_name)
+
     def tearDown(self):
         self.browser.close()
 
