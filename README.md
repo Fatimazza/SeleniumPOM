@@ -19,7 +19,7 @@ What will be used on this project
 | Test Reporter  | Pytest HTML (https://pytest-html.readthedocs.io/en/latest/) |
 | Browser        | Latest version of Chrome / Mozilla Firefox  |
 
-## Installation
+## Pre-Requisite Installation
 
 Install VS Code Editor, Python, and PIP
 
@@ -32,6 +32,20 @@ python --version
 python -m pip --version 
 ```
 
+## Testing Tools Installation
+
+Install Selenium
+
+```Bash
+python -m pip install Selenium
+```
+
+Install Web Driver Manager
+
+```Bash
+python -m pip install webdriver-manager
+```
+
 ## Setting up Project
 
 ### Clone
@@ -41,3 +55,19 @@ python -m pip --version
 ### Open the Project on Editor
 
 Open this Automation Project using VS Code Editor.
+
+### Run the Automation Project 
+
+Change to Project directory on Terminal or Command Prompt
+
+```Bash
+cd SeleniumPOM
+```
+
+Run Test Execution on Terminal
+
+```Bash
+python -m unittest
+```
+
+
