@@ -70,4 +70,20 @@ Run Test Execution on Terminal
 python -m unittest
 ```
 
+### Generate Test Execution HTML Report
 
+Install Pytest-HTML Reporter
+
+```Bash
+python -m pip install pytest-html
+```
+
+Run Selenium with the HTML Reporter
+
+> Note: Please wait until all test execution finished
+
+```Bash
+python -m pytest --html=report.html
+```
+
+Test Execution HTML Report available on <b> SeleniumPOM/report.html </b>
