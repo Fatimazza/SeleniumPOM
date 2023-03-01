@@ -8,6 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from PageObjects.loginPage import LoginPage
 from PageObjects.productListingPage import ProductListingPage
 from PageObjects.productDetailPage import ProductDetailPage
+from PageObjects.cartPage import CartPage
 
 class SaucedemoProduct(unittest.TestCase):
     baseUrl = "https://www.saucedemo.com/"
@@ -60,6 +61,12 @@ class SaucedemoProduct(unittest.TestCase):
         productDetailPage.clickAddCartButton()
         productDetailPage.clickCartButton()
         time.sleep(5)
+        # assert product in cart
+        cartPage = CartPage(self.browser)
+        cart_product_name = cartPage.getProductName()
+        cart_product_qty = cartPage.getProductQuantity()
+        self.assertEqual(cart_product_name, "Sauce Labs Bolt T-Shirt")
+        self.assertEqual(cart_product_qty, "1")
 
     def tearDown(self):
         self.browser.close()
