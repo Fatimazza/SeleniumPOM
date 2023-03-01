@@ -12,6 +12,7 @@ class SaucedemoLogin(unittest.TestCase):
     baseUrl = "https://www.saucedemo.com/"
     username = "standard_user"
     password = "secret_sauce"
+    wrong_password = "wrongpass"
 
     def setUp(self):
         self.browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
@@ -47,6 +48,12 @@ class SaucedemoLogin(unittest.TestCase):
         # assertion
         login_text = loginPage.getLoginButton()
         self.assertEquals(login_text.casefold(), "LOGIN".casefold())
+
+    def test_c_failed_login_wrong_password(self):
+        loginPage = LoginPage(self.browser)
+        loginPage.setUsername(self.username)
+        loginPage.setPassword(self.wrong_password)
+        loginPage.clickLogin()
 
     def tearDown(self):
         self.browser.close()
