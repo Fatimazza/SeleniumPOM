@@ -1,7 +1,7 @@
 <h1 align="center">Selenium POM</h1></br>
 
 <p align="center">
-:sparkles: Web Automation Testing using Selenium WebDriver &amp; Python with POM design pattern :sparkles:
+:sparkles: Web Automation Testing using Selenium WebDriver, Python, &amp; POM design pattern :sparkles:
 </p>
 
 ## Preparation
