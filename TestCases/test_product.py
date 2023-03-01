@@ -27,8 +27,11 @@ class SaucedemoProduct(unittest.TestCase):
         time.sleep(5)
         # assert product available
         productListingPage = ProductListingPage(self.browser)
-        third_product_name = productListingPage.getThirdProductName()
+        third_product_name = productListingPage.getThirdProduct().text
         self.assertEqual("Sauce Labs Bolt T-Shirt", third_product_name)
+        # step to open detail page
+        productListingPage.getThirdProduct().click()
+        time.sleep(5)
 
     def tearDown(self):
         self.browser.close()

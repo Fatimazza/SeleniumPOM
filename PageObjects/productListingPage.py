@@ -16,8 +16,8 @@ class ProductListingPage:
     def getFirstProductName(self):
         return self.driver.find_element(By.CLASS_NAME, self.text_first_product_name_class).text
 
-    def getThirdProductName(self):
-        return self.driver.find_element(By.CSS_SELECTOR, self.text_third_product_name_css).text
+    def getThirdProduct(self):
+        return self.driver.find_element(By.CSS_SELECTOR, self.text_third_product_name_css)
 
     def clickBurgerMenu(self):
         self.driver.find_element(By.ID, self.button_burger_menu_id).click()
