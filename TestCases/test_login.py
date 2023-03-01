@@ -54,6 +54,9 @@ class SaucedemoLogin(unittest.TestCase):
         loginPage.setUsername(self.username)
         loginPage.setPassword(self.wrong_password)
         loginPage.clickLogin()
+        # assertion
+        wrong_login_text = loginPage.getWrongLoginText()
+        self.assertIn("Username and password do not match", wrong_login_text)
 
     def tearDown(self):
         self.browser.close()
